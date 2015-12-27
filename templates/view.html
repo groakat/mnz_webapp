@@ -1,0 +1,23 @@
+<h4>Give input:</h4>
+
+<form method="POST" action="" enctype=multipart/form-data>
+  {{ form.csrf_token }} 
+  {% for field in form %}
+    <dt>{{ field.name }}
+    <dd>{{ field|safe }} {{field.label }}
+    {% if field.errors %}
+      <ul class=errors>
+      {% for error in field.errors %}
+        <li>{{ error }}</li>
+      {% endfor %}</ul>
+    {% endif %}</dd>
+  {% endfor %}
+<p><input type=file name=file>
+    <input type=submit value=Compute></form></p>
+
+<p>
+{% if result != None %}
+<h4>Plot:</h4>
+<img src="{{result}}">
+{% endif %}
+</p>
