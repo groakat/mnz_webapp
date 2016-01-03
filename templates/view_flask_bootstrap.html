@@ -19,7 +19,7 @@ MathJax.Hub.Config({
 </script>
 {% endblock %}
 
-<!--
+
 {% block navbar %}
 <nav class="navbar navbar-default" role="navigation">
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -31,15 +31,13 @@ MathJax.Hub.Config({
 </div>
 </nav>
 {% endblock %}
--->
+
 
 {% block content %}
 
-<h2>Damped sine wave</h2>
+<h2>Malen nach Zahlen</h2>
 
-This web page visualizes the function \(
-u(t) = Ae^{-bt}\sin (w t), \hbox{ for } t\in [0,T]
-\).
+Nachdem ein Bild ausgesucht wurde, dr&uuml;cke auf <i>compute</i> um ein Malen-nach-Zahlen Bild zu generieren.
 
 <p>
 <form class="navbar-form navbar-top" method="post" action="">
@@ -67,7 +65,7 @@ u(t) = Ae^{-bt}\sin (w t), \hbox{ for } t\in [0,T]
     </div>
   {% endfor %}
 <br/>
-<input type="submit" value="Compute" class="btn btn-default">
+<input type="submit" value="Malen-nach-Zahlen Bild generieren" class="btn btn-default">
 </form>
 
 <p>

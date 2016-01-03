@@ -1,10 +1,15 @@
 <form method=post action="" enctype=multipart/form-data>
 <table>
   {% for field in form %}
+    {% if field.name != "csrf_token" %}
     <tr>
-    <td>{{ field.name }}</td><td>{{ field }}</td>
+    <!--
+    <td>{{ field.name }}</td>
+    -->
     <td>{{ field.label }}</td>
+    <td>{{ field }}</td>
     </tr>
+    {% endif %}
   {% endfor %}
 </table>
 <p><input type=submit value=Compute></form></p>
@@ -14,5 +19,6 @@
 <img src="{{ img }}" width="500">
 <img src="{{ result_1 }}" width="500">
 <img src="{{ result_2 }}" width="500">
+<img src="{{ result_3 }}" width="500">
 {% endif %}
 </p>

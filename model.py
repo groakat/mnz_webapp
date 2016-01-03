@@ -4,6 +4,10 @@ from flask.ext.wtf import Form
 from math import pi
 
 class InputForm(Form):
+    P = FileField('Das Bild', validators=[
+      #  FileRequired(),
+        FileAllowed(['jpg', 'png'], 'Images only!')
+    ])
     S = FloatField(
         label='Felderanzahl', default=500,
         validators=[validators.InputRequired()])
@@ -16,7 +20,3 @@ class InputForm(Form):
     NC = FloatField(
         label='Anzahl der Farben', default=10,
         validators=[validators.InputRequired()])
-    P = FileField('Das Bild', validators=[
-        FileRequired(),
-        FileAllowed(['jpg', 'png'], 'Images only!')
-    ])
