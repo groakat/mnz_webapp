@@ -1,11 +1,15 @@
-from wtforms import Form, FloatField, validators
+from wtforms import Form, FloatField, validators, StringField
 from flask_wtf.file import FileField, FileAllowed, FileRequired
 from flask.ext.wtf import Form
 from math import pi
 
 class InputForm(Form):
+    # P = StringField( 
+    #     label='Das Bild', default="",
+    #     validators=[validators.InputRequired()])
+    # ])
     P = FileField('Das Bild', validators=[
-      #  FileRequired(),
+       FileRequired(),
         FileAllowed(['jpg', 'png'], 'Images only!')
     ])
     S = FloatField(

@@ -7,6 +7,7 @@ import colorbynumbers.colorbynumbers as cbn
 import os
 
 LOCAL_FOLDER = '/home/pr/html/projekte/mnz/'
+LOCAL_FOLDER = "./"
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -18,12 +19,12 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 try:
     template_name = sys.argv[1]
 except IndexError:
-    template_name = 'view_plain'
-    #template_name = 'view_flask_bootstrap'
+    # template_name = 'view_plain'
+    template_name = 'view_bootstrap'
 
-if template_name == 'view_flask_bootstrap':
-    from flask_bootstrap import Bootstrap
-    Bootstrap(app)
+# if template_name == 'view_flask_bootstrap':
+#     from flask_bootstrap import Bootstrap
+#     Bootstrap(app)
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -73,7 +74,7 @@ def index():
                                            compactness=compactness,
                                            sigma=sigma,
                                            n_colors=n_colors,
-                                           folder_prefix='/home/pr/html/projekte/mnz/') 
+                                           folder_prefix=LOCAL_FOLDER) 
             
         else:
             print "nothing"
